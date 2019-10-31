@@ -24,7 +24,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 		    .and()
 		    .withUser("arup").password(passwordEncoder().encode("1234")).roles("USER");
 	}
-	
+	//sercurity check
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		// TODO Auto-generated method stub
@@ -34,8 +34,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter
 		    .antMatchers("/bank/login").permitAll()
 		    .antMatchers("/bank/wihdrawl").authenticated()
 		   .antMatchers("/bank/createaccount").hasRole("USER")
-		    .and()
+		   .and()
 		    .httpBasic();
+		//check this is corect
+		//ok
 	}
 	
 	@Bean
